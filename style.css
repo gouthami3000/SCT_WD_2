@@ -1,0 +1,305 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2,#6a11cb);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Background Animation */
+
+.background-circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(15px);
+    opacity:0.5;
+    animation:float 7s infinite alternate ease-in-out;
+}
+
+.circle1{
+    width:250px;
+    height:250px;
+    background:#00e5ff;
+    top:8%;
+    left:8%;
+}
+
+.circle2{
+    width:320px;
+    height:320px;
+    background:#ff4ecd;
+    bottom:8%;
+    right:8%;
+}
+
+@keyframes float{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(45px);
+    }
+
+}
+
+/* Stopwatch Card */
+
+.container{
+
+    width:430px;
+    padding:35px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:25px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    color:white;
+
+    z-index:5;
+
+}
+
+.container h1{
+
+    margin-bottom:25px;
+    font-size:34px;
+    font-weight:600;
+
+}
+
+.container h1 i{
+
+    color:#ffe600;
+    margin-right:8px;
+
+}
+
+/* Timer */
+
+.display{
+
+    font-size:50px;
+    font-weight:bold;
+
+    margin:25px 0;
+
+    letter-spacing:2px;
+
+    text-shadow:0 0 10px rgba(255,255,255,.5);
+
+}
+
+/* Buttons */
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    color:white;
+
+}
+
+button i{
+
+    margin-right:6px;
+
+}
+
+/* Individual Colors */
+
+#start{
+
+    background:#00c853;
+
+}
+
+#pause{
+
+    background:#ff9800;
+
+}
+
+#reset{
+
+    background:#f44336;
+
+}
+
+#lap{
+
+    background:#2979ff;
+
+}
+
+/* Hover */
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 18px rgba(0,0,0,.25);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* Lap Section */
+
+.lap-section{
+
+    margin-top:30px;
+
+}
+
+.lap-section h2{
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+/* Lap List */
+
+#lapList{
+
+    list-style:none;
+
+    max-height:220px;
+
+    overflow-y:auto;
+
+}
+
+/* Individual Lap */
+
+#lapList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.15);
+
+    padding:12px 15px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    animation:slide .4s ease;
+
+}
+
+/* Animation */
+
+@keyframes slide{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* Scroll Bar */
+
+#lapList::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+#lapList::-webkit-scrollbar-thumb{
+
+    background:white;
+
+    border-radius:10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.container{
+
+    width:92%;
+    padding:25px;
+
+}
+
+.display{
+
+    font-size:35px;
+
+}
+
+.buttons{
+
+    grid-template-columns:1fr;
+
+}
+
+}
